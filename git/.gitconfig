@@ -1,0 +1,19 @@
+[user]
+	name = Axel Fahy
+	email = axel@fahy.net
+[core]
+	editor = vim
+	autocrlf = input
+[alias]
+	lg = log --color --graph --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %C(green)(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+
+    c = commit -m
+    a = add
+    aa = !git add -u && git add . && git status
+    cob = checkout -b
+    pushm = push origin master
+    pullm = pull origin master
