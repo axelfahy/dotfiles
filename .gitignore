@@ -2,3 +2,18 @@
 *.swp
 *.swo
 *.~
+
+# vim config - vim-plug
+vim/.vim/tmp/*
+vim/.vim/swap/*
+vim/.vim/plugged/*
+
+# vifm config (colors, etc.)
+vifm/.vifm/colors
+vifm/.vifm/scripts
+vifm/.vifm/vifm-help.txt
+vifm/.vifm/vifminfo
+
+# ssh known host
+ssh/.ssh/known_hosts
+
