@@ -205,6 +205,8 @@ set foldlevel=12                        " Level of indentation for folders
 " Remove all trailing whitespace when saving
 autocmd BufWritePre <buffer> :%s/\s\+$//e
 
+" Automatically active spelling for certain type of files
+autocmd FileType markdown setlocal spell
 
 "==============================================================================
 " STATUS BAR
