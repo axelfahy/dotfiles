@@ -1,4 +1,4 @@
-" Axel Fahy - 23.02.2018
+" Axel Fahy - 17.09.2019
 " /etc/vim/vimrc or ~/.vimrc
 " Vim configuration file
 
@@ -399,4 +399,46 @@ nnoremap <space><space> :<C-u>Unite -start-insert file_rec/async<cr>
 " reset not it is <C-l> normally
 :nnoremap <space>r <Plug>(unite_restart)
 
+
+"===========================================================
+" Digraphs
+" To run: CTRL-K followed by the letter, in insert mode
+" ±
+:dig pm 177
+" ²
+:dig 22 178
+" ∏
+:dig PI 8719
+" ∑
+:dig SM 8721
+" √
+:dig sq 8730
+" ∞
+:dig if 8734
+" Γ
+:dig GG 915
+" Δ
+:dig DD 916
+" α
+:dig aa 945
+" β
+:dig bb 946
+" γ
+:dig gg 947
+" δ
+:dig dd 948
+" ε
+:dig ee 949
+" η
+:dig nn 951
+" μ
+:dig mu 956
+" τ
+:dig ta 964
+" λ
+:dig ll 955
+" π
+:dig pi 960
+" σ
+:dig ss 963
 
