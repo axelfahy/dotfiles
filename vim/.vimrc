@@ -42,6 +42,9 @@ Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 " Doxygen comments
 Plug 'vim-scripts/DoxygenToolkit.vim'
 
+" Fish scripts
+Plug 'dag/vim-fish'
+
 " Git plugin
 Plug 'tpope/vim-fugitive'
 
