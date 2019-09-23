@@ -1,6 +1,12 @@
 # Main file for fish command completions. This file contains various
 # common helper functions for the command completions. All actual
 # completions are located in the completions subdirectory.
+
+#
+# Aliases
+#
+. ~/.config/fish/aliases.fish
+
 #
 # Set default field separators
 #
