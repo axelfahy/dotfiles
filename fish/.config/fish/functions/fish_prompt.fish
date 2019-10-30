@@ -1,13 +1,15 @@
 # Set the prompt.
+# Adaptation from Acidhub example, which was not working correctly for git.
 # Format [vim-status] <username@hostname|path>status>
 function fish_prompt --description 'Write out the prompt'
 	set laststatus $status
 
     if set -l git_branch (command git symbolic-ref HEAD 2>/dev/null | string replace refs/heads/ '')
         set git_branch (set_color -o blue)"$git_branch"
-        if command git diff-index --quiet HEAD --
+        set upstream (command git for-each-ref --format='%(upstream:short)' (command git symbolic-ref -q HEAD))
+        if not command git diff-index --quiet HEAD --
             if set -l count (command git rev-list --count --left-right $upstream...HEAD 2>/dev/null)
-                echo $count | read -l ahead behind
+                echo $count | read -l behind ahead
                 if test "$ahead" -gt 0
                     set git_status "$git_status"(set_color red)⬆
                 end
@@ -15,19 +17,19 @@ function fish_prompt --description 'Write out the prompt'
                     set git_status "$git_status"(set_color red)⬇
                 end
             end
-            for i in (git status --porcelain | string sub -l 2 | uniq)
+            for i in (git status --porcelain | string sub -l 2 | string trim -- | sort -u)
                 switch $i
                     case "."
                         set git_status "$git_status"(set_color green)✚
-                    case " D"
+                    case "D"
                         set git_status "$git_status"(set_color red)✖
-                    case "*M*"
+                    case "M"
                         set git_status "$git_status"(set_color green)✱
-                    case "*R*"
+                    case "R"
                         set git_status "$git_status"(set_color purple)➜
-                    case "*U*"
+                    case "U"
                         set git_status "$git_status"(set_color brown)═
-                    case "??"
+                    case "\?\?"
                         set git_status "$git_status"(set_color red)≠
                 end
             end
