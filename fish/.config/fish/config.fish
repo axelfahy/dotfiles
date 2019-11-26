@@ -327,5 +327,5 @@ set PATH $PATH (ruby -e 'puts Gem.user_dir')/bin
 # Added by travis gem.
 [ -f $USER/.travis/travis.sh ] && source $USER/.travis/travis.sh
 
-# Start archey logo.
-archey3
+# Set command for fzf in vim.
+set -x FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
