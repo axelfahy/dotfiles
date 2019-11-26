@@ -329,3 +329,6 @@ set PATH $PATH (ruby -e 'puts Gem.user_dir')/bin
 
 # Set command for fzf in vim.
 set -x FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
+
+# Enable nerd fonts.
+set -g theme_nerd_fonts yes
