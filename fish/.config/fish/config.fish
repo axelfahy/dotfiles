@@ -318,6 +318,15 @@ if not functions -q fisher
     fish -c fisher
 end
 
+#
+# Environment variables
+#
+# Set command for fzf in vim.
+set -Ux FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
+
+# Set the default editor
+set -Ux EDITOR vim
+
 # Add SQLServer tools to path.
 set PATH $PATH /opt/mssql-tools/bin
 
@@ -326,9 +335,6 @@ set PATH $PATH (ruby -e 'puts Gem.user_dir')/bin
 
 # Added by travis gem.
 [ -f $USER/.travis/travis.sh ] && source $USER/.travis/travis.sh
-
-# Set command for fzf in vim.
-set -x FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
 
 # Enable nerd fonts.
 set -g theme_nerd_fonts yes
