@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/bash -
 #===============================================================================
 #
 #          FILE:  lock.sh
@@ -11,19 +11,17 @@
 #  REQUIREMENTS:  ---
 #          BUGS:  ---
 #         NOTES:  ---
-#        AUTHOR:  Axel Fahy (), axel@fahy.net
+#        AUTHOR:  Axel Fahy (axel@fahy.net)
 #       COMPANY:
 #       VERSION:  1.0
-#       CREATED:  10/29/2015 02:20:20 PM CET
-#      REVISION:  ---
+#       CREATED:  29/10/2015 14:20
+#      REVISION:  26/11/2019 19:12
 #===============================================================================
 
-#!/bin/sh -e
-
-# Take a screenshot
+# Take a screenshot.
 scrot -o /tmp/screen_locked.png
 
-# Pixellate it 10x
+# Pixellate it 10x.
 mogrify -scale 10% -scale 1000% /tmp/screen_locked.png
 
 # Lock screen displaying this image.
