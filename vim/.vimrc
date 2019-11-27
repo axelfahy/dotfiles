@@ -146,6 +146,12 @@ set showmatch                           " Display pair of parenthesis
 set wildmode=list:full                  " Automatic auto completion
 set nofoldenable                        " Remove folding
 
+set vb                                  " Visual bell instead of beep
+syntax on                               " Enable syntax coloration
+set encoding=UTF-8                      " UTF-8 encoding
+" Copy directly to system clipboard
+set clipboard=unnamedplus
+
 
 "==============================================================================
 " TABS
@@ -153,10 +159,6 @@ set tabstop=4                           " Number of visual spaces per tab
 set softtabstop=4                       " Number of spaces in tab when editing
 set expandtab                           " tabs are spaces (spaces are not converted into tabs)
 set shiftwidth=4
-
-set vb                                  " Visual bell instead of beep
-syntax on                               " Enable syntax coloration
-set encoding=UTF-8                      " UTF-8 encoding
 
 
 "==============================================================================
