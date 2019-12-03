@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "coc-markdownlint": ">=0.6.2",
+    "coc-python": ">=1.2.6",
+    "coc-texlab": ">=1.9.8"
+  }
+}

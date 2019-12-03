@@ -44,9 +44,6 @@ Plug 'fatih/vim-go'
 " Javascript
 Plug 'pangloss/vim-javascript'
 
-" JSON
-Plug 'elzr/vim-json'
-
 " HTML5
 Plug 'othree/html5.vim'
 
@@ -150,7 +147,7 @@ set vb                                  " Visual bell instead of beep
 syntax on                               " Enable syntax coloration
 set encoding=UTF-8                      " UTF-8 encoding
 " Copy directly to system clipboard
-set clipboard=unnamedplus
+"set clipboard=unnamedplus              " If set, fail to copy from middle mouse
 
 
 "==============================================================================
@@ -175,6 +172,8 @@ autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Automatically active spelling for certain type of files
 autocmd FileType markdown setlocal spell
+autocmd FileType tex setlocal spell
+autocmd FileType plaintex setlocal spell
 
 
 "==============================================================================
@@ -327,6 +326,10 @@ let g:languagetool_jar='/opt/LanguageTool/languagetool-commandline.jar'
 
 "===========================================================
 " Latex
+" Build command
+autocmd FileType tex nnoremap <buffer> <space>b  :CocCommand latex.Build<CR>
+autocmd FileType plaintex nnoremap <buffer> <space>b  :CocCommand latex.Build<CR>
+
 " Default format
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_MultipleCompileFormats='pdf, aux'
