@@ -13,8 +13,12 @@ URxvt*.shading: 10
 
 !! perl extensions
 URxvt.perl-ext: default, url-select, clipboard
+! tabs
 
 ! url-select (part of urxvt-perls package)
+URxvt.perl-ext-common: default, matcher, tabbed
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.autocopy: true
 URxvt.url-select.button: 2
@@ -60,18 +64,21 @@ URxvt*color14 : #34E2E2
 URxvt*color7  : #D3D7CF
 URxvt*color15 : #EEEEEC
 
-! Control keys
+! control keys
 URxvt.keysym.Control-Up:    \033[1;5A
 URxvt.keysym.Control-Down:  \033[1;5B
 URxvt.keysym.Control-Left:  \033[1;5D
 URxvt.keysym.Control-Right: \033[1;5C
 
-! Tabs
-URxvt.perl-ext-common: default, tabbed
-! Color of tabs
+! color of tabs
 URxvt.tabbed.tabbar-fg: 2
 URxvt.tabbed.tabbar-bg: 0
 URxvt.tabbed.tab-fg: 3
 URxvt.tabbed.tab-bg: 0
 
 URxvt.letterspace: 0
+
+! avoid scrolling back if update
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     true
+URxvt*scrollTtyKeypress:    true
