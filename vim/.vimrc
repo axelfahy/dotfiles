@@ -50,9 +50,6 @@ Plug 'othree/html5.vim'
 " Vim grammarous
 Plug 'rhysd/vim-grammarous'
 
-" LateX
-Plug 'LaTeX-Box-Team/LaTeX-Box'
-
 " Markdown
 Plug 'tpope/vim-markdown'
 
@@ -92,6 +89,9 @@ Plug 'tpope/vim-fugitive'
 " fzf - command-line fuzzy finder
 Plug 'junegunn/fzf'
 
+" Rethinking Vim as a tool for writing
+Plug 'reedes/vim-pencil'
+
 " LanguageTool
 Plug 'vim-scripts/LanguageTool'
 
@@ -105,6 +105,9 @@ Plug 'scrooloose/nerdcommenter'
 
 " Surround - quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
+
+" Uncover usage problems in your writing
+Plug 'reedes/vim-wordy'
 
 " File type icons to vim plugins - ALWAYS LAST PLUGIN TO INSTALL
 Plug 'ryanoasis/vim-devicons'
@@ -146,8 +149,6 @@ set nofoldenable                        " Remove folding
 set vb                                  " Visual bell instead of beep
 syntax on                               " Enable syntax coloration
 set encoding=UTF-8                      " UTF-8 encoding
-" Copy directly to system clipboard
-"set clipboard=unnamedplus              " If set, fail to copy from middle mouse
 
 
 "==============================================================================
@@ -227,40 +228,6 @@ noremap <C-l> :bnext<CR>
 
 
 "==============================================================================
-" WRAPPING
-let mapleader = '\'
-noremap <silent> <Leader>w :call ToggleWrap()<CR>
-function ToggleWrap()
-    if &wrap
-        echo "Wrap OFF"
-        setlocal nowrap
-        set virtualedit=all
-        silent! nunmap <buffer> <Up>
-        silent! nunmap <buffer> <Down>
-        silent! nunmap <buffer> <Home>
-        silent! nunmap <buffer> <End>
-        silent! iunmap <buffer> <Up>
-        silent! iunmap <buffer> <Down>
-        silent! iunmap <buffer> <Home>
-        silent! iunmap <buffer> <End>
-    else
-        echo "Wrap ON"
-        setlocal wrap linebreak nolist
-        set virtualedit=
-        setlocal display+=lastline
-        noremap  <buffer> <silent> <Up>   gk
-        noremap  <buffer> <silent> <Down> gj
-        noremap  <buffer> <silent> <Home> g<Home>
-        noremap  <buffer> <silent> <End>  g<End>
-        inoremap <buffer> <silent> <Up>   <C-o>gk
-        inoremap <buffer> <silent> <Down> <C-o>gj
-        inoremap <buffer> <silent> <Home> <C-o>g<Home>
-        inoremap <buffer> <silent> <End>  <C-o>g<End>
-    endif
-endfunction
-
-
-"==============================================================================
 " MOVEMENTS
 " Movements are made on displayed lines
 noremap  <buffer> <silent> k gk
@@ -270,13 +237,17 @@ noremap  <buffer> <silent> $ g$
 
 
 "==============================================================================
-" fzf
-map <C-b> :NERDTreeToggle<CR>
-map <C-p> :FZF<CR>
+" TEMPLATES AND MAPPING FOR LANGUAGES AND PLUGINS
 
 
-"==============================================================================
-" TEMPLATES AND MAPPING FOR LANGUAGE
+"===========================================================
+" Airline - automatically displays all buffers when there's only one tab open
+let g:airline#extensions#tabline#enabled = 1
+" Powerline fonts with airline
+" If using urxvt, needs to install compatible fonts
+let g:airline_powerline_fonts = 1
+let g:airline_theme='molokai'
+let g:airline#extensions#coc#enabled = 1
 
 
 "===========================================================
@@ -310,6 +281,12 @@ func! CompileCRun()
 endfunc
 
 
+"==============================================================================
+" fzf and nerdtree
+map <C-b> :NERDTreeToggle<CR>
+map <C-p> :FZF<CR>
+
+
 "===========================================================
 " Grammarous
 " Check only in comments for certains files
@@ -330,13 +307,6 @@ let g:languagetool_jar='/opt/LanguageTool/languagetool-commandline.jar'
 autocmd FileType tex nnoremap <buffer> <space>b  :CocCommand latex.Build<CR>
 autocmd FileType plaintex nnoremap <buffer> <space>b  :CocCommand latex.Build<CR>
 
-" Default format
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_MultipleCompileFormats='pdf, aux'
-" Remove auto folding
-let g:Tex_AutoFolding = 0
-let g:tex_flavor='Latex'                " Set type of file to latex if empty
-
 
 "===========================================================
 " Markdown
@@ -352,13 +322,19 @@ augroup END
 
 
 "===========================================================
-" Airline - automatically displays all buffers when there's only one tab open
-let g:airline#extensions#tabline#enabled = 1
-" Powerline fonts with airline
-" If using urxvt, needs to install compatible fonts
-let g:airline_powerline_fonts = 1
-let g:airline_theme='molokai'
-let g:airline#extensions#coc#enabled = 1
+" Pencil
+let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
+let g:pencil#conceallevel = 3           " 0=disable, 1=one char, 2=hide char, 3=hide all (def)
+let g:pencil#concealcursor = 'c'        " n=normal, v=visual, i=insert, c=command (def)
+" Status line indicator with airline
+let g:airline_section_x = '%{PencilMode()}'
+
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType tex call pencil#init()
+  autocmd FileType text call pencil#init()
+augroup END
 
 
 "===========================================================
