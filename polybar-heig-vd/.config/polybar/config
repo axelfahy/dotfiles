@@ -74,9 +74,9 @@ font-2 = DejaVu Sans Mono:size=10
 
 modules-left = i3
 ;modules-center = mpd
-modules-right = pulseaudio filesystem memory cpu eth battery temperature date
+modules-right = pulseaudio filesystem memory cpu eth temperature date
 
-tray-position = right
+tray-position = ${env:TRAY_POSITION:right}
 tray-padding = 2
 ;tray-background = #0063ff
 
