@@ -75,11 +75,7 @@ exec --no-startup-id clipit
 assign [class="Thunderbird"]        $ws3
 assign [class="ProtonMail Bridge"]  $ws3
 assign [class="Telegram"]           $ws10
-<<<<<<< HEAD
 assign [class="Slack"]              $ws10
-=======
-assign [class="Slack"]           $ws10
->>>>>>> c6c525214368724119e3799e45cfa538542d78d3
 
 # Open specific applications in floating mode
 for_window [class="Calculator"] floating enable border pixel 1
@@ -257,11 +253,8 @@ mode  "(s)leep (r)estart shut(d)own" {
 bindsym $mod+n mode "(s)leep (r)estart shut(d)own"
 
 # Toogle keyboard layout and set capslock as ctrl
-<<<<<<< HEAD
-exec --no-startup-id "setxkbmap -option ctrl:nocaps,grp:switch,grp:alt_shift_toggle,grp_led:scroll us, us -variant, intl"
-=======
-exec --no-startup-id "setxkbmap -option ctrl:nocaps, grp:switch, grp:alt_shift_toggle, grp_led:scroll us, us -variant, intl"
->>>>>>> c6c525214368724119e3799e45cfa538542d78d3
+exec --no-startup-id "setxkbmap -option ctrl:nocaps,grp:switch,grp:alt_shift_toggle,grp_led:scroll us,us -variant ,intl"
+
 ###########################################################################
 ##############################  Status bar  ###############################
 ###########################################################################
