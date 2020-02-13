@@ -86,6 +86,8 @@ for_window [class="Nitrogen"] floating enable sticky enable border normal
 # Shortcuts to applications
 # Start a terminal
 bindsym $mod+Return exec urxvt -pe tabbed
+# Start ranger
+bindsym $mod+Shift+Return exec urxvt -e ranger
 # Start program launcher
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 # Open file manager
