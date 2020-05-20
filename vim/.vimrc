@@ -50,9 +50,6 @@ Plug 'othree/html5.vim'
 " Vim grammarous
 Plug 'rhysd/vim-grammarous'
 
-" Markdown
-Plug 'tpope/vim-markdown'
-
 " Octave
 Plug 'jvirtanen/vim-octave'
 
@@ -309,12 +306,6 @@ autocmd FileType plaintex nnoremap <buffer> <space>b  :CocCommand latex.Build<CR
 
 
 "===========================================================
-" Markdown
-" Enable fenced code block syntax higlighting
-let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
-
-
-"===========================================================
 " Octave files
 augroup filetypedetect
     au! BufRead,BufNewFile *.m,*.oct set filetype=octave
@@ -324,8 +315,6 @@ augroup END
 "===========================================================
 " Pencil
 let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
-let g:pencil#conceallevel = 3           " 0=disable, 1=one char, 2=hide char, 3=hide all (def)
-let g:pencil#concealcursor = 'c'        " n=normal, v=visual, i=insert, c=command (def)
 " Status line indicator with airline
 let g:airline_section_x = '%{PencilMode()}'
 
