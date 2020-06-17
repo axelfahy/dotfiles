@@ -25,6 +25,11 @@ unsetopt LIST_BEEP
 setopt AUTO_REMOVE_SLASH         # Remove trailing `/` if space is press.
 setopt CHASE_LINKS               # Handles sym links.
 unsetopt HUP                     # Don't close background jobs when exiting the shell.
+setopt AUTO_CD                   # Auto cd if nothing is provided, e.g. for `..`.
+setopt AUTO_PUSHD                # Make cd push the old directory onto the directory stack.
+setopt PUSHD_IGNORE_DUPS         # Don’t push multiple copies of the same directory onto the directory stack.
+setopt PUSHD_SILENT              # Do not print the directory stack after pushd or popd.
+setopt PUSHD_TO_HOME             # Have pushd with no arguments act like ‘pushd $HOME’.
 
 #-----------------------------
 # Dircolors
