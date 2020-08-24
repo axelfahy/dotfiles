@@ -168,3 +168,21 @@ setprompt() {
   RPROMPT=$'${vcs_info_msg_0_}'
 }
 setprompt
+
+#------------------------------
+# fzf
+#------------------------------
+fzfshare="/usr/share/fzf"
+# Thanks Ubuntu for doing things differently...
+if [ ! -d $fzfshare ]; then
+    fzfshare="/usr/share/doc/fzf/examples"
+fi
+if [ -d $fzfshare ]; then
+  source "$fzfshare/key-bindings.zsh"
+  source "$fzfshare/completion.zsh"
+fi
+
+# Set fd instead of find.
+export FZF_DEFAULT_COMMAND="fd . $HOME"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd -t d . $HOME"
