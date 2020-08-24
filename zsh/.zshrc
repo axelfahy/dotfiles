@@ -58,6 +58,9 @@ alias s='cd ..'
 alias df='df --human-readable'
 alias du='du --human-readable'
 
+# Find, for Ubuntu
+alias fd='fdfind'
+
 # Octave - without gui by default
 alias octave="octave --no-gui"
 
