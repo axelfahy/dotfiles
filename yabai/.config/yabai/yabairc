@@ -61,6 +61,7 @@ yabai -m rule --add title='Preferences$' manage=off
 
 # float settings windows
 yabai -m rule --add title='Settings$' manage=off
+yabai -m rule --add title='Update$' manage=off
 
 # float custom apps
 yabai -m rule --add title='^1Password' manage=off
@@ -69,14 +70,13 @@ yabai -m rule --add title='^Today' manage=off
 yabai -m rule --add app='^Cisco AnyConnect Secure Mobility Client$' manage=off
 
 # float IntelliJ Preference panes
-yabai -m rule --add app='IntelliJ IDEA' title='^$' manage=off
 yabai -m rule --add app='IntelliJ IDEA' title='Project Structure' manage=off
 yabai -m rule --add app='IntelliJ IDEA' title='Preferences' manage=off
 yabai -m rule --add app='IntelliJ IDEA' title='Edit configuration' manage=off
 
-# spacebar padding on top screen
+# spacebar padding on bottom screen
 SPACEBAR_HEIGHT=$(spacebar -m config height)
-yabai -m config external_bar all:$SPACEBAR_HEIGHT:0
+yabai -m config external_bar all:0:$SPACEBAR_HEIGHT
 
 echo "yabai configuration loaded.."
 
