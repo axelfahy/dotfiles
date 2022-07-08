@@ -1,6 +1,7 @@
 ####### Shortcut Hotkeys #############
 # open terminal
-alt - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+alt - return : /usr/local/bin/wezterm
+#alt - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 #alt - return : open -n /Applications/Alacritty.app
 
 # open firefox
