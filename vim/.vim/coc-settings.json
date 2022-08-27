@@ -1,3 +1,6 @@
 {
-    "coc.preferences.noselect": false
+    "coc.preferences.noselect": false,
+    "go.goplsOptions": {
+        "completeUnimported": true
+    }
 }

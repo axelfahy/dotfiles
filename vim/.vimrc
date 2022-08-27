@@ -39,7 +39,7 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'dag/vim-fish'
 
 " Go language
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Javascript
 Plug 'pangloss/vim-javascript'
@@ -287,6 +287,22 @@ map <C-b> :NERDTreeToggle<CR>
 map <C-p> :FZF<CR>
 
 
+"==============================================================================
+" Go syntax highlighting
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_functions_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+
+" Auto formatting and importing
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
+
+" Status line types/signatures
+let g:go_auto_type_info = 1
+
+
 "===========================================================
 " Grammarous
 " Check only in comments for certains files
@@ -327,6 +343,18 @@ augroup pencil
   autocmd FileType tex call pencil#init()
   autocmd FileType text call pencil#init()
 augroup END
+
+
+"===========================================================
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 "===========================================================
