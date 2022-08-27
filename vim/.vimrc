@@ -47,6 +47,9 @@ Plug 'pangloss/vim-javascript'
 " HTML5
 Plug 'othree/html5.vim'
 
+" Kotlin
+Plug 'udalov/kotlin-vim'
+
 " Vim grammarous
 Plug 'rhysd/vim-grammarous'
 
