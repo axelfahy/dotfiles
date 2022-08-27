@@ -51,7 +51,7 @@ workspace $ws10 output $monitorB
 
 # Autostart applications
 # Applications on workspace
-exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/MellowPlayer'
+exec --no-startup-id i3-msg 'workspace $ws1; exec /usr/bin/plexmediaplayer'
 exec --no-startup-id i3-msg 'workspace $ws2; exec /usr/bin/firefox'
 exec --no-startup-id i3-msg 'workspace $ws3; exec /usr/bin/thunderbird'
 exec --no-startup-id i3-msg 'workspace $ws3; exec /usr/bin/protonmail-bridge'
@@ -75,7 +75,7 @@ exec --no-startup-id redshift-gtk
 assign [class="MellowPlayer"]       $ws1
 assign [class="Clementine"]         $ws1
 assign [class="Thunderbird"]        $ws3
-assign [class="Desktop-Bridge"]     $ws3
+assign [class="Proton Mail Bridge"] $ws3
 assign [class="Discord"]            $ws8
 assign [class="Steam"]              $ws9
 assign [class="Telegram"]           $ws10
