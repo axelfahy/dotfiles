@@ -17,3 +17,4 @@
     cob = checkout -b
     pushm = push origin master
     pullm = pull origin master
+    s = status
