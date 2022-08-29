@@ -13,8 +13,8 @@ col.tab_background_edge = "#0b0022"
 col.tab_foreground = "#808080"
 
 -- Tab active
-col.tab_background_active = "#2b2042"
-col.tab_foreground_active = "#c0c0c0"
+col.tab_background_active = "#3b3052"
+col.tab_foreground_active = "#d0d0d0"
 -- Tab hover
 col.tab_background_hover = "#3b3052"
 col.tab_foreground_hover = "#909090"

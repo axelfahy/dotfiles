@@ -21,18 +21,6 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
   -- and that we have room for the edges.
   local title = wezterm.truncate_left(tab.active_pane.title, max_width-2)
 
-  -- Set tab with unseen output as another color
-  local has_unseen_output = false
-  for _, pane in ipairs(tab.panes) do
-    if pane.has_unseen_output then
-      has_unseen_output = true
-      break;
-    end
-  end
-  if has_unseen_output then
-      background = colors.tab_background_unseen
-  end
-
   local edge_foreground = background
 
   return {
