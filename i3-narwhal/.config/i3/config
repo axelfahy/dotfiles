@@ -259,6 +259,11 @@ bindsym $mod+n mode "(s)leep (r)estart shut(d)own"
 
 # Toogle keyboard layout and set capslock as ctrl
 exec --no-startup-id "setxkbmap -option ctrl:nocaps,grp:switch,grp:alt_shift_toggle,grp_led:scroll us,us -variant ,intl"
+
+# Configuration of monitors
+exec --no-startup-id ~/.screenlayout/normal.sh
+
+
 ###########################################################################
 ##############################  Status bar  ###############################
 ###########################################################################
