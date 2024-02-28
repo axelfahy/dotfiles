@@ -120,6 +120,9 @@ call plug#end()
 " Set Python3
 let g:powerline_pycmd = 'py3'
 
+" Set the term
+set term=xterm-256color
+
 " Set tmp directory
 set directory=~/.vim/tmp//
 " Maintain undo history between sessions
@@ -286,6 +289,17 @@ endfunc
 map <C-b> :NERDTreeToggle<CR>
 map <C-p> :FZF<CR>
 
+"==============================================================================
+" Go syntax highlighting
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+
+" Auto formatting and importing
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
 
 "==============================================================================
 " Go syntax highlighting
@@ -544,3 +558,4 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
