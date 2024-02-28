@@ -6,8 +6,8 @@
 # History
 #-----------------------------
 export HISTFILE=$HOME/.history
-export HISTORY=1000000
-export SAVEHIST=1000000
+export HISTORY=10000000
+export SAVEHIST=10000000
 export HISTFILESIZE=1000000000
 setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
 setopt SHARE_HISTORY             # Share history between all sessions.
@@ -41,25 +41,28 @@ export LS_COLORS
 # Alias
 #-----------------------------
 # Confirmation before removing files.
-alias cp='cp --interactive'
-alias mv='mv --interactive'
-alias rm='rm --interactive'
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
 
 # Shortcuts for `ls`
-alias ls='ls --color -F'
-alias ll='ls --color -lh'
-alias la='ls --color -a'
-alias lla='ls --color -alh'
+alias ls='ls -FG'
+alias ll='ls -lhG'
+alias la='ls -aG'
+alias lla='ls -alhG'
 
 # Others.
 alias c='clear'
 alias less='less --quiet'
 alias s='cd ..'
-alias df='df --human-readable'
-alias du='du --human-readable'
+alias df='df -h'
+alias du='du -h'
+
+# Kubernetes
+alias k=kubectl
 
 # Find, for Ubuntu
-alias fd='fdfind'
+#alias fd='fdfind'
 
 # Octave - without gui by default
 alias octave="octave --no-gui"
@@ -108,6 +111,9 @@ zstyle ':completion:*:kill:*'   force-list always
 
 zstyle ':completion:*:*:killall:*' menu yes select
 zstyle ':completion:*:killall:*'   force-list always
+
+# kubectl completion
+source <(kubectl completion zsh)
 
 #------------------------------
 # Window title
@@ -189,3 +195,43 @@ fi
 export FZF_DEFAULT_COMMAND="fd . $HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
+
+# Maven with OSAG system.
+export PATH="/System/Volumes/Data/Applications/OSAGmvn3/bin:$PATH"
+
+# JAVA_HOME
+export JAVA_HOME=$(/usr/libexec/java_home -v11)
+#export JAVA_HOME=$(/usr/libexec/java_home -v 1.8.0)
+
+# Maven options
+export MAVEN_OPTS="-Xms256m -Xmx4096m -XX:ReservedCodeCacheSize=1024m -Djava.awt.headless=true -Dmaven.wagon.http.ssl.insecure=true -Djavax.net.ssl.trustStoreType=KeychainStore"
+alias mvnQuickBuild="mvn -DskipTests -Dformat.skipSources -Dformat.skipTestSources -Dscalastyle.skip -Dcheckstyle.skip"
+
+# Export locals for intelliJ (just in case...)
+export LC_CTYPE=UTF-8
+
+# Add asdf
+export PATH=$PATH:${HOME}/.asdf
+. /usr/local/opt/asdf/libexec/asdf.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Alias for kitty ssh
+#alias ssh="kitty +kitten ssh"
+
+export PULLER_TIMEOUT=1200
+export DOCKER_REPO_CACHE=$HOME/.docker_repo_cache
+
+# Add python path
+export PATH="/usr/local/opt/python@3.12/bin:$PATH"
+export PATH="/usr/local/opt/python@3.12/libexec/bin:$PATH"
+
+# Set GOBIN path
+export PATH="$PATH:/Users/axf/.asdf/installs/golang/1.21.7/go"
+export GOBIN="/Users/axf/.asdf/installs/golang/1.21.7/go"
+export GOROOT="/Users/axf/.asdf/installs/golang/1.21.7/go"
+
+alias autoperm="sudo dscl . -merge /Groups/admin GroupMembership $USER"
+
+eval "$(direnv hook zsh)"
+
