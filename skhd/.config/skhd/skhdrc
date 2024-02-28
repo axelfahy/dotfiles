@@ -7,6 +7,9 @@ alt - return : /usr/local/bin/wezterm
 # open firefox
 alt - x : /Applications/Firefox.app/Contents/MacOS/firefox -new-window
 
+# activate privileges
+alt - z : /Applications/Privileges.app/Contents/Resources/PrivilegesCLI --add
+
 # open finder
 #alt - c : /System/Library/CoreServices/Finder.app/Contents/MacOS/Finder
 
@@ -74,11 +77,16 @@ alt + shift - 7 : yabai -m window --space 7
 alt + shift - 8 : yabai -m window --space 8
 alt + shift - 9 : yabai -m window --space 9
 alt + shift - 0 : yabai -m window --space 10
+# Go to left / right workspace - NOT WORKING
+#alt + ctrl - h : yabai -m window space --focus left
+#alt + ctrl - l : yabai -m window space --focus left
+#alt + shift - b : yabai -m window --space recent; \
+#                  yabai -m space --focus recent
 
-# # mirror tree y-axis
+# mirror tree y-axis
 alt + shift - y : yabai -m space --mirror y-axis
 
-# # mirror tree x-axis
+# mirror tree x-axis
 alt + shift - x : yabai -m space --mirror x-axis
 
 # balance size of windows
