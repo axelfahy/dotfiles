@@ -1,0 +1,10 @@
+# Files ignored globally
+*.DS_Store
+*.idea
+*.iml
+**/target/**
+
+manifest.yaml
+values-ansible-generated.yaml
+*.drawio
+
