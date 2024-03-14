@@ -333,6 +333,9 @@ set PATH $PATH /opt/mssql-tools/bin
 # Add RubyGEMS to path.
 set PATH $PATH (ruby -e 'puts Gem.user_dir')/bin
 
+# Add go bin to path.
+set PATH $PATH ~/go/bin
+
 # Added by travis gem.
 [ -f $USER/.travis/travis.sh ] && source $USER/.travis/travis.sh
 
