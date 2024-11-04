@@ -341,3 +341,6 @@ set PATH $PATH ~/go/bin
 
 # Enable nerd fonts.
 set -g theme_nerd_fonts yes
+
+# For kubectl plugins
+set -q KREW_ROOT; and set -gx PATH $PATH $KREW_ROOT/.krew/bin; or set -gx PATH $PATH $HOME/.krew/bin
