@@ -17,3 +17,6 @@ vifm/.vifm/vifminfo
 # ssh known host
 ssh/.ssh/known_hosts
 
+# thunar last layout
+xfce4/.config/xfce4/xfconf
+
