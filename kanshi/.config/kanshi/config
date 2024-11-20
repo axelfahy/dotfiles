@@ -1,0 +1,15 @@
+profile Workplace {
+    output eDP-1 mode 1920x1200 position 0,0
+}
+
+profile Workplace {
+    output eDP-1 mode 1920x1200 position 2600,2870
+    output DP-1 mode 3440x1440 position 1900,1430
+}
+
+profile Home {
+    output eDP-1 mode 1920x1200 position 0,1430
+    output 'Acer Technologies ED347CKR Unknown' mode 3440x1440 position 1920,890
+    output 'NEC Corporation EA244WMi 46140599NB' mode 1920x1200 position 5360,1000
+}
+
