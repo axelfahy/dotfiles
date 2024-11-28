@@ -20,3 +20,6 @@ ssh/.ssh/known_hosts
 # thunar last layout
 xfce4/.config/xfce4/xfconf
 
+# asdf plugin
+fish/.config/fish/completions/asdf.fish
+

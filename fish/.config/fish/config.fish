@@ -325,22 +325,17 @@ end
 set -Ux FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
 
 # Set the default editor
-set -Ux EDITOR vim
+set -gx EDITOR /usr/bin/vim
 
-# Add SQLServer tools to path.
-set PATH $PATH /opt/mssql-tools/bin
-
-# Add RubyGEMS to path.
-set PATH $PATH (ruby -e 'puts Gem.user_dir')/bin
-
-# Add go bin to path.
-set PATH $PATH ~/go/bin
-
-# Added by travis gem.
-[ -f $USER/.travis/travis.sh ] && source $USER/.travis/travis.sh
-
-# Enable nerd fonts.
+# Enable nerd fonts
 set -g theme_nerd_fonts yes
 
-# For kubectl plugins
+# Enable asdf
+source ~/.asdf/asdf.fish
+
+# Enable krew plugin manager for kubectl
 set -q KREW_ROOT; and set -gx PATH $PATH $KREW_ROOT/.krew/bin; or set -gx PATH $PATH $HOME/.krew/bin
+
+# Avoid starting electron apps on xwayland
+set -gx ELECTRON_OZONE_PLATFORM_HINT auto
+
