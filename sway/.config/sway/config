@@ -187,6 +187,9 @@ bindsym $mod+Ctrl+semicolon exec swaylock
     bindsym $mod+Ctrl+Right workspace next
     bindsym $mod+Ctrl+l workspace next
 
+    # Back and forth between workspaces
+    bindsym $mod+tab workspace back_and_forth
+
 #
 # Assign applications to workspaces
 #
