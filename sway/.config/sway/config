@@ -51,12 +51,12 @@ workspace 7 output 'Acer Technologies ED347CKR Unknown'
 workspace 8 output 'NEC Corporation EA244WMi 46140599NB'
 workspace 9 output 'NEC Corporation EA244WMi 46140599NB'
 workspace 10 output 'NEC Corporation EA244WMi 46140599NB'
-workspace 5 output DP-1
-workspace 6 output DP-1
-workspace 7 output DP-1
-workspace 8 output DP-1
-workspace 9 output DP-1
-workspace 10 output DP-1
+workspace 5 output 'Philips Consumer Electronics Company PHL 346B1C 0x000029AE'
+workspace 6 output 'Philips Consumer Electronics Company PHL 346B1C 0x000029AE'
+workspace 7 output 'Philips Consumer Electronics Company PHL 346B1C 0x000029AE'
+workspace 8 output 'Philips Consumer Electronics Company PHL 346B1C 0x000029AE'
+workspace 9 output 'Philips Consumer Electronics Company PHL 346B1C 0x000029AE'
+workspace 10 output 'Philips Consumer Electronics Company PHL 346B1C 0x000029AE'
 
 ### Idle configuration
 #

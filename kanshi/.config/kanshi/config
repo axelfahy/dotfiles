@@ -4,7 +4,7 @@ profile Workplace {
 
 profile Workplace {
     output eDP-1 mode 1920x1200 position 2600,2870
-    output DP-1 mode 3440x1440 position 1900,1430
+    output 'Philips Consumer Electronics Company PHL 346B1C 0x000029AE' mode 3440x1440 position 1900,1430
 }
 
 profile Home {
