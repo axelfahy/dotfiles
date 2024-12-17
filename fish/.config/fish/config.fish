@@ -339,3 +339,6 @@ set -q KREW_ROOT; and set -gx PATH $PATH $KREW_ROOT/.krew/bin; or set -gx PATH $
 # Avoid starting electron apps on xwayland
 set -gx ELECTRON_OZONE_PLATFORM_HINT auto
 
+# Add golang binaries in path
+set -x PATH $PATH (go env GOPATH)/bin
+
