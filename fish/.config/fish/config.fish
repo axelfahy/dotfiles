@@ -342,3 +342,5 @@ set -gx ELECTRON_OZONE_PLATFORM_HINT auto
 # Add golang binaries in path
 set -x PATH $PATH (go env GOPATH)/bin
 
+direnv hook fish | source
+
