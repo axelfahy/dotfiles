@@ -15,6 +15,7 @@
     a = add
     aa = !git add -u && git add . && git status
     cob = checkout -b
-    pushm = push origin master
-    pullm = pull origin master
     s = status
+[commit]
+	gpgsign = true
+
