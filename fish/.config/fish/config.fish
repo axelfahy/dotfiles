@@ -331,7 +331,7 @@ set -gx EDITOR /usr/bin/vim
 set -g theme_nerd_fonts yes
 
 # Enable asdf
-source ~/.asdf/asdf.fish
+source /opt/asdf-vm/asdf.fish
 
 # Enable krew plugin manager for kubectl
 set -q KREW_ROOT; and set -gx PATH $PATH $KREW_ROOT/.krew/bin; or set -gx PATH $PATH $HOME/.krew/bin
